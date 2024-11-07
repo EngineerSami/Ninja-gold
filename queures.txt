@@ -1,0 +1,54 @@
+
+// Create a model called User following the ERD above
+Create and run the migration files to create the User table in your database
+Create a .txt file where you'll save each of the queries you'll run in the shell
+Run the shell and import your User model
+>py manage.py shell
+In [1]: from hi.models import *
+
+Query: Create 3 new users
+In [3]: User.objects.create(
+   ...: first_name = "sami",
+   ...: last_name = "daragh" ,
+   ...: email = "sami@gmail.com",
+   ...: age = 18)
+Out[3]: <User: User object (1)>
+
+In [4]: User.objects.create(
+   ...: first_name = "anas",
+   ...: last_name = "zughayyar" ,
+   ...: email = "anas@gmail.com",
+   ...: age = 31)
+Out[4]: <User: User object (2)>
+
+In [5]: User.objects.create(
+   ...: first_name = "yasser",
+   ...: last_name = "zubi" ,
+   ...: email = "yaser@gmail.com",
+   ...: age = 32)
+Out[5]: <User: User object (3)>
+
+
+Query: Retrieve all the users
+
+users = User.objects.all()
+
+Query: Retrieve the last user
+
+last_user = User.objects.latest('id')
+
+Query: Retrieve the first user
+
+first_user = User.objects.first()
+
+Query: Change the user with id=3 so their last name is Pancakes.
+
+user_to_update = User.objects.get(id=3)
+
+Query: Delete the user with id=2 from the database
+
+User.objects.get(id=2).delete()
+
+Query: Get all the users, sorted by their first name
+
+sorted_users = User.objects.order_by('first_name')
