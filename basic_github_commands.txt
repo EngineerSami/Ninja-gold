@@ -1,0 +1,23 @@
+// create repo locally
+git init
+
+// Check repo status locally:   // Always check
+git status
+
+// add files to repo
+git add .
+
+
+// commit changes with message
+git commit -m "new"
+
+
+// if new repo: create in github:
+gh repo create              // if not yet autherized:  gh auth login
+    // if repo created locally choose:
+        Push an existing local repository to github
+        DO NOT CREATE FROM SCRATCH
+
+
+// if repo already created:
+git push            // git push will use default directory (main) unless otherwise specified
