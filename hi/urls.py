@@ -1,7 +1,10 @@
+# ninja_gold/urls.py
+from django.contrib import admin
 from django.urls import path
-from .views import user_list, add_user
+from hi import views
 
 urlpatterns = [
-    path('', user_list, name='index'),
-    path('add_user', add_user, name='add_user'),
+    path('admin/', admin.site.urls),
+    path('', views.gold, name='gold'),
+    path('process_money', views.process_money, name='process_money'),
 ]
